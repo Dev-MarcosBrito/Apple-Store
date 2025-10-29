@@ -6,10 +6,12 @@
   reestruturado com a ajuda de um assistente (<strong>IA</strong>) para adotar boas práticas modernas de semântica, SEO, responsividade e UX.
 </p>
 
-<h2>🔗 Deploy</h2>
+<h2>🔗 Deploy e Preview</h2>
 <p>
   Acesse a página publicada: 
-  <a href="https://dev-marcosbrito.github.io/Apple-Store/" target="_blank" rel="noopener noreferrer">dev-marcosbrito.github.io/Apple-Store</a>
+  <a href="https://dev-marcosbrito.github.io/Apple-Store/" target="_blank" rel="noopener noreferrer">dev-marcosbrito.github.io/Apple-Store</a> 
+  
+  <img src="https://github.com/Dev-MarcosBrito/Apple-Store/blob/main/assets/img/preview-mockups.png?raw=true">
 </p>
 
 <h2>✨ Principais Recursos</h2>
