@@ -3,14 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 body {
     background-color: #0f0f1e;
     color: #fff;
     font-size: 16px;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 header{
@@ -25,7 +25,7 @@ header{
 }
 
 .logo {
-    font-family: "Orbitron", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 2rem;
     font-weight: 900;
     color: #00f7ff;
@@ -41,6 +41,17 @@ header nav ul li{
     cursor: pointer;
     position: relative;
     padding: 5px 0;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav ul li a:focus-visible {
+    outline: 2px solid #00f7ff;
+    outline-offset: 4px;
+    border-radius: 2px;
 }
 
 header nav ul li::after {
@@ -90,6 +101,28 @@ header nav ul li:hover::after{
         opacity: 1;
         transform: translate(-50%, -50%) scale(1.5);
     }
+}
+
+/* Link para pular para o conteúdo */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    left: 20px;
+    top: 20px;
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+    background: #00f7ff;
+    color: #000;
+    border-radius: 6px;
+    z-index: 10;
 }
 
 .list {
@@ -166,7 +199,7 @@ header nav ul li:hover::after{
 
 .product-name {
     font-size: 4.5rem;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Roboto", sans-serif;
     line-height: 1.1;
     margin-bottom: 20px;
 
@@ -228,27 +261,57 @@ header nav ul li:hover::after{
 
 .arrows {
     position: absolute;
-    width: 90%;
+    inset: 0;
     display: flex;
     justify-content: space-between;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    align-items: center;
+    padding: 0 24px;
+    pointer-events: none; /* não bloquear cliques no conteúdo */
     z-index: 5;
 }
 
 .arrow-btn {
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(0, 247, 255, 0.3);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(0, 247, 255, 0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 6px 24px rgba(0, 247, 255, 0.15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    pointer-events: auto; /* reabilita cliques nos botões */
 }
 
 .arrow-btn:hover {
-    background-color: rgba(0, 247, 255, 0.2);
+    background: rgba(0, 247, 255, 0.16);
     border-color: #00f7ff;
+    box-shadow: 0 10px 28px rgba(0, 247, 255, 0.28);
+    transform: translateY(-1px) scale(1.03);
+}
+
+.arrow-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.arrow-btn:focus-visible {
+    outline: 2px solid #00f7ff;
+    outline-offset: 2px;
+}
+
+.arrow-btn svg {
+    filter: drop-shadow(0 0 6px rgba(0, 247, 255, 0.35));
+}
+
+.arrow-btn img {
+    width: 22px;
+    height: 22px;
+    display: block;
+    filter: drop-shadow(0 0 6px rgba(0, 247, 255, 0.35));
 }
 
 .indicators {
@@ -264,7 +327,7 @@ header nav ul li:hover::after{
 }
 
 .numbers {
-    font-family: "Orbitron", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 3rem;
     font-weight: 800;
     color: rgba(255, 255, 255, 0.2);
@@ -276,15 +339,26 @@ header nav ul li:hover::after{
 }
 
 .dot {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.2);
     width: 40px;
     height: 4px;
-    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 2px;
+    cursor: pointer;
 }
 
 .dot.active {
     background-color: #00f7ff;
     box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+}
+
+.dot:focus-visible {
+    outline: 2px solid #00f7ff;
+    outline-offset: 3px;
 }
 
 .tech-circle {
@@ -328,4 +402,129 @@ header nav ul li:hover::after{
     height: 120px;
     top: 20%;
     left: 70%;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .list {
+        width: 90%;
+    }
+
+    .product-img {
+        width: 50%;
+    }
+
+    .content {
+        width: 50%;
+        padding-right: 40px;
+    }
+
+    .product-name {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 680px) {
+    header {
+        width: 100vw;
+        padding: 16px 20px;
+    }
+
+    header nav ul {
+        gap: 20px;
+    }
+
+    .list {
+        width: 100%;
+    }
+
+    .item {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 100px 24px 120px;
+    }
+
+    .product-img,
+    .content {
+        width: 100%;
+        padding-right: 0;
+        align-items: center;
+    }
+
+    .product-img img {
+        max-width: 70%;
+        max-height: 50%;
+    }
+
+    .product-name {
+        font-size: 2.2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .arrows {
+        padding: 0 12px;
+    }
+
+    .arrow-btn {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* Estado desabilitado das setas no início/fim */
+.arrow-btn[disabled] {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.arrow-btn[disabled]:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(0, 247, 255, 0.25);
+    transform: none;
+}
+
+/* Footer */
+.site-footer {
+    position: relative;
+    z-index: 6;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(0, 247, 255, 0.12);
+    padding: 24px 20px;
+    color: #b8b8d0;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.site-footer .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-footer p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 680px) {
+    .site-footer {
+        padding: 20px 16px;
+    }
+}
+
+/* Acessibilidade: reduzir animações para usuários que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .container::before {
+        display: none;
+    }
 }
