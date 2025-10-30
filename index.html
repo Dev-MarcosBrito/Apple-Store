@@ -14,14 +14,33 @@
 <body>
     <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
     <header>
+       <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="primary-nav" aria-expanded="false">
+         <img src="./assets/svg/menu-hamburguer.svg" alt="" aria-hidden="true">
+       </button>
        <div class="logo">APPLE STORE</div> 
-       <nav>
-        <ul>
-            <li><a href="#home" aria-current="page">Home</a></li>
-            <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#contatos">Contatos</a></li>
-        </ul>
-       </nav>
+        <nav id="primary-nav">
+         <ul>
+             <li><a id="nav-home" data-i18n="nav.home" href="#home" aria-current="page">Home</a></li>
+             <li><a id="nav-products" data-i18n="nav.products" href="#produtos">Produtos</a></li>
+             <li><a id="nav-contacts" data-i18n="nav.contacts" href="#contatos">Contatos</a></li>
+         </ul>
+         <div class="header-actions">
+           <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+             <button class="lang-btn" type="button" data-lang="pt-BR" aria-pressed="false" title="Português (Brasil)">
+               <img src="./assets/img/brasil.png" alt="Português (Brasil)" aria-hidden="true">
+             </button>
+             <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" title="English">
+               <img src="./assets/img/estados-unidos.png" alt="English" aria-hidden="true">
+             </button>
+             <button class="lang-btn" type="button" data-lang="es" aria-pressed="false" title="Español">
+               <img src="./assets/img/espanha.png" alt="Español" aria-hidden="true">
+             </button>
+           </div>
+           <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema" aria-pressed="false">
+             <img id="theme-icon" src="./assets/svg/sunny.svg" alt="" aria-hidden="true">
+           </button>
+         </div>
+        </nav>
     </header>
     
     <main class="container" id="conteudo-principal">
@@ -36,42 +55,42 @@
             <div class="item active" role="group" aria-roledescription="slide" aria-label="Slide 1 de 3" aria-hidden="false">
 
                 <div class="product-img">
-                    <img src="./assets/img/apple-watch.png" alt="Apple Watch Series 10 em destaque">
+                    <img src="./assets/img/apple-watch.png" alt="Apple Watch Series 10 em destaque" loading="eager" fetchpriority="high" decoding="async">
                 </div>
 
                 <div class="content">
-                    <p class="product-tag">Novo Lançamento</p>
+                    <p class="product-tag" data-i18n="cards.0.tag">Novo Lançamento</p>
                     <h1 class="product-name" id="home">Apple Watch Series 10</h1>
-                    <p class="description">O Apple Watch Series 10 estabelece um novo marco na história do Apple Watch. Com nossa maior e mais avançada tela até hoje1 e espaço de sobra para exibir informações. Graças à primeira tela OLED com amplo ângulo de visão da Apple, o mostrador tem um brilho a mais que facilita a leitura de qualquer direção. Tudo num piscar de olhos.</p>
-                    <button class="btn" type="button" aria-label="Saiba mais sobre Apple Watch Series 10">Saiba mais</button>
+                    <p class="description" data-i18n="cards.0.desc">O Apple Watch Series 10 estabelece um novo marco na história do Apple Watch. Com nossa maior e mais avançada tela até hoje1 e espaço de sobra para exibir informações. Graças à primeira tela OLED com amplo ângulo de visão da Apple, o mostrador tem um brilho a mais que facilita a leitura de qualquer direção. Tudo num piscar de olhos.</p>
+                    <button class="btn" data-i18n="actions.learn_more" type="button" aria-label="Saiba mais sobre Apple Watch Series 10">Saiba mais</button>
                 </div>
 
             </div>
 
             <div class="item" role="group" aria-roledescription="slide" aria-label="Slide 2 de 3" aria-hidden="true">
                 <div class="product-img">
-                    <img src="./assets/img/air-pods.png" alt="AirPods Max em destaque">
+                    <img src="./assets/img/air-pods.png" alt="AirPods Max em destaque" loading="lazy" decoding="async">
                 </div>
             
                 <div class="content">
-                    <p class="product-tag">Som Premium</p>
+                    <p class="product-tag" data-i18n="cards.1.tag">Som Premium</p>
                     <h2 class="product-name" id="produtos">Air Pods Max</h2>
-                    <p class="description">Os AirPods Max oferecem áudio de alta-fidelidade com riqueza de detalhes para uma experiência sem igual. Cada peça do driver exclusivo contribui para produzir sons com o mínimo de distorção em toda a faixa audível. Assim você ouve cada nota com um novo nível de clareza.</p>
-                    <button class="btn" type="button" aria-label="Saiba mais sobre AirPods Max">Saiba mais</button>
+                    <p class="description" data-i18n="cards.1.desc">Os AirPods Max oferecem áudio de alta-fidelidade com riqueza de detalhes para uma experiência sem igual. Cada peça do driver exclusivo contribui para produzir sons com o mínimo de distorção em toda a faixa audível. Assim você ouve cada nota com um novo nível de clareza.</p>
+                    <button class="btn" data-i18n="actions.learn_more" type="button" aria-label="Saiba mais sobre AirPods Max">Saiba mais</button>
                 </div>
 
             </div>
 
             <div class="item" role="group" aria-roledescription="slide" aria-label="Slide 3 de 3" aria-hidden="true">
                 <div class="product-img">
-                    <img src="./assets/img/vision-pro.png" alt="Apple Vision Pro em destaque">
+                    <img src="./assets/img/vision-pro.png" alt="Apple Vision Pro em destaque" loading="lazy" decoding="async">
                 </div>
             
                 <div class="content">
-                    <p class="product-tag">Alta perfomace</p>
+                    <p class="product-tag" data-i18n="cards.2.tag">Alta performance</p>
                     <h2 class="product-name">Vision Pro</h2>
-                    <p class="description">O Apple Vision Pro pode transformar qualquer ambiente em seu próprio cinema pessoal. Expanda seus filmes, programas e jogos para o tamanho perfeito e curta tudo com Áudio Espacial. O Vídeo Imersivo da Apple coloca você no centro da ação com uma imersão alucinante. E com mais pixels do que uma TV 4K para cada olho, você pode curtir conteúdo incrível onde quer que esteja — em um voo longo ou no sofá de casa.</p>
-                    <button class="btn" type="button" aria-label="Saiba mais sobre Vision Pro">Saiba mais</button>
+                    <p class="description" data-i18n="cards.2.desc">O Apple Vision Pro pode transformar qualquer ambiente em seu próprio cinema pessoal. Expanda seus filmes, programas e jogos para o tamanho perfeito e curta tudo com Áudio Espacial. O Vídeo Imersivo da Apple coloca você no centro da ação com uma imersão alucinante. E com mais pixels do que uma TV 4K para cada olho, você pode curtir conteúdo incrível onde quer que esteja — em um voo longo ou no sofá de casa.</p>
+                    <button class="btn" data-i18n="actions.learn_more" type="button" aria-label="Saiba mais sobre Vision Pro">Saiba mais</button>
                 </div>
 
             </div>
@@ -101,7 +120,13 @@
 
     <footer class="site-footer" role="contentinfo">
         <div class="footer-inner">
-            <p>Este site foi desenvolvido para fins educacionais. Todas as informações, marcas e produtos apresentados são fictícios.</p>
+            <p data-i18n="footer.educational">Este site foi desenvolvido para fins educacionais. Todas as informações, marcas e produtos apresentados são fictícios.</p>
+            <p class="icon-credits">
+              Ícones de bandeiras por Freepik – 
+              <a href="https://www.flaticon.com/br/icones-gratis/brasil" target="_blank" rel="noopener noreferrer">Brasil</a> ·
+              <a href="https://www.flaticon.com/br/icones-gratis/estados-unidos" target="_blank" rel="noopener noreferrer">Estados Unidos</a> ·
+              <a href="https://www.flaticon.com/br/icones-gratis/espanha" target="_blank" rel="noopener noreferrer">Espanha</a>
+            </p>
         </div>
     </footer>
 

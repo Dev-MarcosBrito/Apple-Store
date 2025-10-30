@@ -6,10 +6,12 @@
   reestruturado com a ajuda de um assistente (<strong>IA</strong>) para adotar boas práticas modernas de semântica, SEO, responsividade e UX.
 </p>
 
-<h2>🔗 Deploy</h2>
+<h2>🔗 Deploy e Preview</h2>
 <p>
   Acesse a página publicada: 
-  <a href="https://dev-marcosbrito.github.io/Apple-Store/" target="_blank" rel="noopener noreferrer">dev-marcosbrito.github.io/Apple-Store</a>
+  <a href="https://dev-marcosbrito.github.io/Apple-Store/" target="_blank" rel="noopener noreferrer">dev-marcosbrito.github.io/Apple-Store</a> 
+  
+  <img src="https://github.com/Dev-MarcosBrito/Apple-Store/blob/main/assets/img/preview-mockups.png?raw=true">
 </p>
 
 <h2>✨ Principais Recursos</h2>
@@ -63,6 +65,26 @@ readme.md
   <a href="https://youtu.be/o_yiPCiwzUs?si=5hAv0MJd1AqGTziA" target="_blank" rel="noopener noreferrer">PROJETO CRIATIVO com HTML, CSS e JAVASCRIPT</a>.
   Adaptações foram feitas para aprimorar semântica, SEO, acessibilidade, responsividade e organização do código.
  </p>
+
+
+<h2>🆕 Implementações adicionais</h2>
+<ul>
+  <li><strong>Tema claro/escuro</strong>: toggle com persistência em <code>localStorage</code>, ícones (sol/lua) e respeito ao <code>prefers-color-scheme</code>.</li>
+  <li><strong>Suporte a múltiplos idiomas (i18n)</strong>: PT‑BR, EN e ES com <code>data-i18n</code>, atualização de <em>ARIA</em> dinâmica e persistência do idioma.</li>
+  <li><strong>Bandeiras</strong>: uso de PNGs (Brasil, Estados Unidos, Espanha) no seletor de idioma.</li>
+  <li><strong>Menu hambúrguer no mobile</strong>: navegação colapsável com <code>aria-expanded</code>, fechamento por <kbd>ESC</kbd> e clique; ações de tema/idioma dentro do menu em telas pequenas.</li>
+  <li><strong>Lazy-load</strong>: imagens não-hero com <code>loading="lazy"</code> e <code>decoding="async"</code>; imagem principal com <code>fetchpriority="high"</code>.</li>
+  <li><strong>Header responsivo</strong>: reorganização da ordem (hambúrguer à esquerda e logo à direita no mobile) mantendo o layout desktop inalterado.</li>
+</ul>
+
+<h3>Créditos de ícones</h3>
+<p>
+  Bandeiras (PNG) por Freepik — 
+  <a href="https://www.flaticon.com/br/icones-gratis/brasil" target="_blank" rel="noopener noreferrer">Brasil</a> ·
+  <a href="https://www.flaticon.com/br/icones-gratis/estados-unidos" target="_blank" rel="noopener noreferrer">Estados Unidos</a> ·
+  <a href="https://www.flaticon.com/br/icones-gratis/espanha" target="_blank" rel="noopener noreferrer">Espanha</a>
+.</p>
+
 
 <h2>⚠️ Aviso</h2>
 <p>
